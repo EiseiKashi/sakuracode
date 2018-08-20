@@ -1,0 +1,7 @@
+CACHE MANIFEST
+# VERSION 0.5
+index.html
+css/grid.css
+img/logo1/hakodate-logo.svg
+img/logo2/hakodate-logo.svg
+img/logo3/hakodate-logo.svg

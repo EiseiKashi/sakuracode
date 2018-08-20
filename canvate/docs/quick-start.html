@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="shortcut icon" type="image/x-icon" href="../canvate.ico">
+    <html manifest="../canvate.appcache">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CANVATE</title>
+    </head>
+    <body class="full-container">
+        <header class="header1 clearfix">
+            <section class="column-3">
+                <img src="http://sakuracode.com/canvate/img/canvate-shiroi-aoi-1.svg">
+            </section>
+            <nav class="column-5">
+                <ul>
+                    <li><a href="https://github.com/EiseiKashi/canvate/" target="_blank">Docs</a></li>
+                    <li><a>Tutorial</a></li>
+                </ul>
+             </nav>
+            <aside class="column-4 last">
+                <ul>
+                   <li><a href="https://cdn.rawgit.com/EiseiKashi/canvate/0.2.6/dev/bin/canvate-0-2-6.js">Version 0.2.6</a></li>
+                    <li><a href="https://github.com/EiseiKashi/canvate/">GitHub</a></li>
+                    <li><a href="http://sakuracode.com/canvate/resume/Eisei-Kashi-Web-Developer.pdf">Resume</a></li>
+                </ul>
+            </aside>
+        </header>
+        <div class="full-container mainArticle">
+			<div class="row" style="display:none;text-align:left;position:fixed;padding-left:1000px">
+				<div class="column-2">
+					<p>Tablet of content</p>
+					<p>   Hello World</p>
+					<p>   Loading images</p>
+					<p>   Other things</p>
+				</div>
+			</div>
+			
+			<article class="row clearfix">
+				<section id="Quick-start" class="column-12 last">
+					<h1>Quick start</h1>
+					<p>You don’t need to install anything. You can use the last version of <b>Canvate</b> directly or you can download the js file and use it in your site.</p>
+					<p>The last version minified is <a href="https://cdn.rawgit.com/EiseiKashi/canvate/0.1.16/dev/bin/canvate-0-1-16-min.js">here</a>.</p>
+				</section>
+				<section id="What-is-a-Clip?" class="column-12 last">
+					<h1>What is a Clip?</h1>
+					<p>A <b>Clip</b> is any visual object used inside the <b>Canvate</b>.</p>
+					<p>The <b>Clip</b> acts as button when a Mouse Event is added to it.</p>
+					<p>It can be used: external images as PNG, JPG, SVG, sprite sheet or the following HTML5 elements:&lt;img&gt;, &lt;canvas&gt;, and &lt;video&gt;.</p>
+					<p>Inside the <b>Clip</b> (empty or not) it can be added more <b>Clip</b> to manipulate all as one, for complex images and animation construction.</p>
+				</section>
+				<section id="Loading-external-Image" class="column-12 last">
+					<h3>Loading external Image</h3>
+					<p>Inside the <b>Canvate</b> can be loaded external images as: *.jpg; *.png; *.svg etc.</p>
+					<p>The position, size and rotation can be set before the image is loaded.</p>
+					<p>An event listener can be added, when the image is loaded: "imageLoaded" and when the image fail to load: "imageError".</p>
+					<section class="column-4">
+						<pre><code class="cm-s-default"><span class="cm-comment">// Create the Canvate.</span><br><span class="cm-keyword">var</span> <span class="cm-def">canvate</span>  <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Canvate</span>(<span class="cm-string">"MyCanvas"</span>);<br><br><span class="cm-comment">// Add new Clip</span><br><span class="cm-keyword">var</span> <span class="cm-def">maskContainer</span> <span class="cm-operator">=</span> <span class="cm-variable">canvate</span>.<span class="cm-property">addNewClip</span>();<br><span class="cm-comment">// Capture image by id</span><br><span class="cm-variable">maskContainer</span>.<span class="cm-property">setImageById</span>(<span class="cm-string">"Sakura"</span>);<br><span class="cm-comment">// Add an empty Clip inside the</span><br><span class="cm-keyword">var</span> <span class="cm-def">maskedClip</span> <span class="cm-operator">=</span> <span class="cm-variable">maskContainer</span>.<span class="cm-property">addNewClip</span>();<br><span class="cm-variable">maskedClip</span>.<span class="cm-property">setImageById</span>(<span class="cm-string">"Fuji"</span>);<br><br><span class="cm-comment">//Move the masked clip</span><br><span class="cm-variable">maskedClip</span>.<span class="cm-property">x</span> <span class="cm-operator">-=</span> <span class="cm-number">55</span>;<br><br><span class="cm-comment">//Set the container as mask</span><br><span class="cm-variable">maskContainer</span>.<span class="cm-property">setMask</span>();<br><br><br>
+							</code>
+						</pre>
+					<section>
+					<section class="column-6 last">
+					</section>
+					<section class="codepen column-12 last">
+						<p data-height="265" data-theme-id="0" data-slug-hash="QmxrwN" data-default-tab="js,result" data-user="EiseiKashi" data-embed-version="2" data-pen-title="Loading Image" class="codepen">See the Pen <a href="https://codepen.io/EiseiKashi/pen/QmxrwN/">Loading Image</a> by Eisei Kashi (<a href="https://codepen.io/EiseiKashi">@EiseiKashi</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+					<p>The <b>Canvate</b> must be loaded before your script.</p>
+					<p>There are two ways to bind the <b>Canvate</b> with the HTML5 &lt;canvas&gt of your page.</p>
+					<p>By passing to the <b>Canvate</b> constructor: The HTML5 &lt;canvas&gt; reference or it ID.</p>
+				</section>
+				<section id="Using-existing-image-in-the-page" class="column-12 last">
+					<h3>Using existing image in the page</h3>
+					<p>Inside the <b>Canvate</b> can be loaded existing images in the page, by id or reference.</p>
+					<section class="codepen column-12 last">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="erNxpm" data-default-tab="js,result" data-user="EiseiKashi" data-embed-version="2" data-pen-title=" Capturing Image (HTML5 canvas-Canvate)" class="codepen">See the Pen <a href="https://codepen.io/EiseiKashi/pen/erNxpm/"> Capturing Image (HTML5 canvas-Canvate)</a> by Eisei Kashi (<a href="https://codepen.io/EiseiKashi">@EiseiKashi</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+				</section>
+				<section id="Masking-image" class="column-12 last">
+					<h3>Masking image</h3>
+					<p>A <b><a href="#What-is-a-Clip?">Clip</a></b> that contains other <b><a href="#What-is-a-Clip?">clips</a></b> can act as a mask.</p>
+					<p>Just create a <b><a href="#What-is-a-Clip?">Clip</a></b>, add into it other clips, then call the method: <b><span style="font-family:monospace;color:DimGray">setMask<span></b>.</p>
+					<p>To remove the mask, just call the method: <b><span style="font-family:monospace;color:DimGray">unsetMask<span></b> in the <b><a href="#What-is-a-Clip?">Clip</a></b> container.</p>
+					<section class="codepen column-12 last">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="GdJzpx" data-default-tab="js,result" data-user="EiseiKashi" data-embed-version="2" data-pen-title="Masking image (HTML5 canvas)" class="codepen">See the Pen <a href="https://codepen.io/EiseiKashi/pen/GdJzpx/">Masking image (HTML5 canvas)</a> by Eisei Kashi (<a href="https://codepen.io/EiseiKashi">@EiseiKashi</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+				</section>
+				<section id="Button-inside-HTML5-canvas" class="column-12 last">
+					<h3>Button inside HTML5</h3>
+					<p>All the <b><a href="#What-is-a-Clip?">Clips</a></b> can be converted easly in a button.</p>
+					<p>You just need to add an event listener like: <b><span style="font-family:monospace;color:DimGray">"mouseOver"<span></b>, <b><span style="font-family:monospace;color:DimGray">"mouseOut"<span></b>, <b><span style="font-family:monospace;color:DimGray">mouseUp<span></b>, <b><span style="font-family:monospace;color:DimGray">"mouseOut"<span></b>, <b><span style="font-family:monospace;color:DimGray">mouseDown<span></b> or <b><span style="font-family:monospace;color:DimGray">"click"<span></b>.</p>
+					<section class="codepen column-12 last">
+						<p data-height="265" data-theme-id="dark" data-slug-hash="BxNbmj" data-default-tab="js,result" data-user="EiseiKashi" data-embed-version="2" data-pen-title="Button sample (HTML5 canvas)" class="codepen">See the Pen <a href="https://codepen.io/EiseiKashi/pen/BxNbmj/">Button sample (HTML5 canvas)</a> by Eisei Kashi (<a href="https://codepen.io/EiseiKashi">@EiseiKashi</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+				</section>
+			</article>
+		</div>
+		<footer>
+			<section class="footer row clearfix">
+				<section id="sakura" class="column-12">
+					<img src="../img/sakura-code-white.svg">
+				</section>
+			</section>
+			<section class="copy">
+				<p>Copyright © 2018 Sakura Code</p>
+			</section>
+		</footer>
+        <script>
+           function getParam(name) {
+               name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+               var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+               var results = regex.exec(location.search);
+               return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+           };
+            
+            function loadScripts(e,t){var r,n,s=[],a=document.scripts[0];if(null!=e)for(;r=e.shift();)"async"in a?((n=document.createElement("script")).async=!1,n.src=r,document.head.appendChild(n)):a.readyState?(n=document.createElement("script"),s.push(n),n.onreadystatechange=function(){for(var e;s[0]&&"loaded"==s[0].readyState;)(e=s.shift()).onreadystatechange=null,a.parentNode.insertBefore(e,a)},n.src=r):document.write('<script src="'+src+'" defer><\/script>');var c=document.getElementsByTagName("head")[0];if(null!=t)for(;r=t.shift();)(n=document.createElement("link")).setAttribute("rel","stylesheet"),n.setAttribute("type","text/css"),n.setAttribute("href",r),c.appendChild(n)}
+            var antiCache = "?"+new Date().getTime();
+                //antiCache = "";
+        setTimeout(function(){
+            var version = getParam("v");
+            loadScripts([ 
+						 "../js/canvate-0-2-5-min.js"+antiCache
+						], 
+                        [ 
+                         "../css/canvate.css"+antiCache
+						 ]);
+        }, 100);
+        </script>
+	</body>
+</html>

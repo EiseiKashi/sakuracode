@@ -1,0 +1,22 @@
+CACHE MANIFEST
+# VERSION 5.0
+# Parallax 3D Game v1
+index.html
+indexHTML.html
+js/canvate-0-2-12.js
+js/canvate-0-2-14.js
+js/emitter-0-0-1.js
+js/Shinkansen.js
+js/yasashiku.js
+js/worldCanvate.js
+js/worldHTML.js
+js/3Dgame.js
+js/game.js
+img/alice.png
+img/arcana.png
+img/aurora.png
+img/fiona.png
+img/jade.png
+img/lily.png
+img/sophia.png
+img/shoot.png

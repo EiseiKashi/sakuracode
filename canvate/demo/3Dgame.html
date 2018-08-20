@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <html manifest="demo.appcache">
+    <meta charset="utf-8">
+    <title>SAKURA code</title>
+    <style>
+        * {
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+        }
+        body {
+            background-color: #f1c497;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+        font-family: 'Soup of Justice';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Soup of Justice'), url('soupofjustice.woff') format('woff');
+        }
+
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container:after,.container:before {
+            content: " ";
+            display: table
+        }
+
+        .container:after {
+            clear: both
+        }
+
+        .container #background {
+            width:100%;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width:750px
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                width:970px
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width:970px
+            }
+        }
+
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px
+        }
+
+        .container-fluid:after,.container-fluid:before {
+            content: " ";
+            display: table
+        }
+
+        .container-fluid:after {
+            clear: both
+        }
+    </style>
+</head>
+<body>
+    <style>
+        #world * {
+            pointer-events: none;
+        }
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            display: inline-block;
+        }
+    </style>
+    <section id="world" class="container">
+        <img id="background" src="img/sky.jpg" alt="">
+    </section>
+    <section class="container">
+        <h2>3D Parallax Game demo</h2>
+        <p><b>Click in to the world to shoot!!</b></p>
+    </section>
+    
+    <script src="js/canvate-0-2-14.js"></script>
+	<script src="js/emitter-0-0-1.js"></script>
+	<script src="js/Shinkansen.js"></script>
+	<script src="js/yasashiku.js"></script>
+	<script src="js/game.js"></script>
+</body>
+</html>

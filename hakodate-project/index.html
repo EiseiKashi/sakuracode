@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <html manifest="hakodate.appcache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            border    : 0;
+            margin    : 0;
+            padding   : 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            background-color: #20232c;
+        }
+
+        .main {
+            width : 100%;
+        }
+
+        ol, ul {
+            list-style     : none;
+        }
+        
+        .slider{
+            margin: auto;
+            text-align: center;
+            width: 450px;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider ul {
+            width : 2000px;
+            transition: margin-left 0.7s;
+            margin-bottom: 10px;
+        }
+
+        .slider ul li {
+            float: left;
+            width: 450px;
+            padding: 40px;
+        }
+
+        .slider ul li p {
+            margin:auto;
+            text-align: center;
+        }
+
+        .slider p:first-child {
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            color: #ffffff;
+            position: relative;
+            font-family: 'Saira', sans-serif;
+            margin-bottom: 21px;
+            font-size: 16px;
+            letter-spacing: 8px;
+            display: inline-block;
+        }
+
+        section a {
+            text-decoration: none;
+            opacity: 0.7;
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 300;
+            padding: 7px 5px;
+            background-color: black;
+            margin: 0 10px;
+            font-family: 'Saira', sans-serif;
+
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        .fusion-text {
+            color: #7a89ab;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Saira">
+    <title>HAKODATE project</title>
+</head>
+<body>
+    <section class="main">
+        <section class="row">
+            <section class="column-12">
+                <section id="slider" class="slider">
+                    <ul id="ul">
+                        <li>
+                            <p>
+                                <img src="img/logo2/hakodate-logo.svg" alt="">
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <img src="img/logo3/hakodate-logo.svg" alt="">
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <img src="img/logo1/hakodate-logo.svg" alt="">
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+        <section class="row">
+            <section class="column-12">
+                <p id="subtitle" class="subtitle">BLOCKCHAIN   /   AI   /   TECHNOLOGY</p>
+                <section class="buttons">
+                    <a id="hidari" href="#"><</a>
+                    <p id="number" class="subtitle"></p>
+                    <a id="migi" href="#">></a>
+                </section>
+            </section>
+        </section>
+    <script>
+        var slider = document.getElementById("ul");
+
+        var width = 450;
+        
+        var currentIndex = 0;
+
+        var next = function(){
+            currentIndex++;
+            if(currentIndex > 2 ){
+                currentIndex = 0;
+            }
+            var margin = width*currentIndex;
+            
+            move(-margin);
+        }
+
+        var prev = function(){
+            currentIndex--;
+            if(currentIndex < 0 ){
+                currentIndex = 2;
+            }
+            var margin = width*currentIndex;
+            move(-margin);
+        }
+
+        var move = function(margin){
+            number.innerHTML = "ロゴ: " + (currentIndex+1);
+            slider.style.marginLeft = margin + "px";
+        }
+
+        var number = document.getElementById("number");
+        
+        move(0);
+
+        var hidari = document.getElementById("hidari");
+        var migi = document.getElementById("migi");
+
+        hidari.onclick = function(event){
+            prev();
+        }
+
+        migi.onclick = function(event){
+            next();
+        }
+
+    </script>
+</body>
+</html>
