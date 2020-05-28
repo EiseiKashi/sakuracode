@@ -247,18 +247,16 @@ var Shoot = function(){
 	}
 
 	var onLoad = function (event){
-		/*
 		_view.setCycle(0,0, _view.width/4, _view.height);
 		_view.isLoop = true;
 		_view.play();
-		*/
 	}
 
 	var initialize = function(){
 		_html			= document.createElement("canvas");
 		
 		var canvate 	= new Canvate(_html);
-		_view 			= canvate.addNewByURL("img/iso-sakura.png");
+		_view 			= canvate.addNewByURL("img/shoot.png");
 		_view.addEventListener(_view.IMAGE_LOADED, onLoad);
 		
 		_style			= _html.style;

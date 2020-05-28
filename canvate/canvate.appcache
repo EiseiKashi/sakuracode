@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# VERSION  0-2-15
+# VERSION  0-2-16
 index.html
 favicon.ico
 canvate.ico
@@ -15,3 +15,6 @@ img/sakura-iso.svg
 resume/Eisei-Kashi-Web-Developer.pdf
 resume/Eisei-Kashi-Full-Stack-Developer.pdf
 docs/quick-start.html
+js/canvate-0-2-16.js
+js/samples.js
+js/site.js
